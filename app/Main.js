@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter, Switch, Route, withRouter } from 'react-router-dom';
 import {
   createMuiTheme,
   ThemeProvider,
@@ -26,9 +27,12 @@ const theme = createMuiTheme({
       fontSize: '3rem',
       fontWeight: 800,
     },
+    body2: {
+      fontSize: '1.1rem',
+    },
     h2: {
       fontFamily: 'Montserrat, Helvetica, Arial, sans',
-      fontSize: '2rem',
+      fontSize: '1.5rem',
       fontWeight: 800,
     },
     h3: {
@@ -43,9 +47,11 @@ const theme = createMuiTheme({
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Page />
-    </ThemeProvider>
+    <HashRouter>
+      <ThemeProvider theme={theme}>
+        <Page />
+      </ThemeProvider>
+    </HashRouter>
   );
 };
 
