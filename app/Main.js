@@ -40,6 +40,16 @@ const theme = createMuiTheme({
       fontSize: '1.5rem',
       fontWeight: 300,
     },
+    h4: {
+      fontFamily: 'Alegreya, Times, Georgia, serif',
+      fontSize: 20,
+      fontWeight: 700,
+    },
+    h5: {
+      fontFamily: 'Montserrat, Helvetica, Arial, sans',
+      fontSize: '1.3rem',
+      fontWeight: 300,
+    },
   },
 });
 
