@@ -12,6 +12,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import siteClasses from '../siteClasses';
 import clsx from 'clsx';
+import { Link, NavLink } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -36,6 +37,12 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Montserrat, Helvetica, Arial, sans',
     fontSize: '2rem',
     fontWeight: 300,
+    color: '#fff',
+    textDecoration: 'none',
+  },
+  selected: {
+    fontWeight: 700,
+    color: '#91AEBA',
   },
 }));
 
@@ -57,41 +64,52 @@ export default function LeftDrawer() {
         className={clsx(classes.drawerImg, mainClasses.imgFluid)}
       />
       <List>
-        <ListItem button>
-          <ListItemText
-            className={classes.navLink}
-            disableTypography
-            primary='HOME'
-          />
-        </ListItem>
-        <ListItem button>
-          <ListItemText
-            className={classes.navLink}
-            disableTypography
-            primary='RESUME'
-          />
-        </ListItem>
-        <ListItem button>
-          <ListItemText
-            className={classes.navLink}
-            disableTypography
-            primary='ABOUT'
-          />
-        </ListItem>
-        <ListItem button>
-          <ListItemText
-            className={classes.navLink}
-            disableTypography
-            primary='ARTICLES'
-          />
-        </ListItem>
-        <ListItem button>
-          <ListItemText
-            className={classes.navLink}
-            disableTypography
-            primary='CONTACT'
-          />
-        </ListItem>
+        <NavLink
+          to='/'
+          className={classes.navLink}
+          activeClassName={classes.selected}
+          exact
+        >
+          <ListItem button>
+            <ListItemText disableTypography primary='HOME' />
+          </ListItem>
+        </NavLink>
+        <NavLink
+          to='/resume'
+          className={classes.navLink}
+          activeClassName={classes.selected}
+        >
+          <ListItem button>
+            <ListItemText disableTypography primary='RESUME' />
+          </ListItem>
+        </NavLink>
+        <NavLink
+          to='/about'
+          className={classes.navLink}
+          activeClassName={classes.selected}
+        >
+          <ListItem button>
+            <ListItemText disableTypography primary='ABOUT' />
+          </ListItem>
+        </NavLink>
+        <NavLink
+          to='/articles'
+          className={classes.navLink}
+          activeClassName={classes.selected}
+        >
+          <ListItem button>
+            <ListItemText disableTypography primary='ARTICLES' />
+          </ListItem>
+        </NavLink>
+        <NavLink
+          to='/contact'
+          className={classes.navLink}
+          activeClassName={classes.selected}
+        >
+          <ListItem button>
+            <ListItemText disableTypography primary='CONTACT' />
+          </ListItem>
+        </NavLink>
       </List>
     </Drawer>
   );
