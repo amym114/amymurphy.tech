@@ -2,27 +2,24 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import Grid from '@material-ui/core/Grid';
 import LeftDrawer from './LeftDrawer';
+import Header from './Header';
+import Home from './Home';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    maxWidth: '1920px',
   },
   content: {
     paddingLeft: theme.spacing(4),
-    paddingTop: theme.spacing(5),
-  },
-  drawer: {
-    backgroundColor: '#3D4B51',
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    backgroundColor: '#3D4B51',
-    color: '#fff',
-    width: drawerWidth,
+    paddingTop: theme.spacing(7),
+    paddingRight: theme.spacing(5),
+    width: '100%',
   },
 }));
 
@@ -34,9 +31,8 @@ export default function Page() {
       <CssBaseline />
       <LeftDrawer />
       <main className={classes.content}>
-        <Typography variant='h3'>Full Stack Developer</Typography>
-        <Typography variant='h1'>AMY MURPHY</Typography>
-        <Typography variant='h3'>New Orleans, LA</Typography>
+        <Header />
+        <Home />
       </main>
     </div>
   );
