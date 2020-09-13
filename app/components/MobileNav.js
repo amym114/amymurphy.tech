@@ -10,7 +10,7 @@ import StateContext from '../StateContext';
 import DispatchContext from '../DispatchContext';
 import siteClasses from '../siteClasses';
 
-const drawerWidth = 240;
+const drawerWidth = '100vw';
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -42,7 +42,7 @@ function MobileNav() {
         <div className={mainClasses.menuBtn}>MENU</div>
       </Box>
       <Collapse in={appState.mobileIsOpen} timeout='auto'>
-        <Modal open={appState.mobileIsOpen}>
+        <Modal open={appState.mobileIsOpen} disableBackdropClick={false}>
           <Box className={classes.drawer}>
             <LeftDrawer closeBtn />
           </Box>

@@ -50,8 +50,8 @@ const siteClasses = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   divider: {
-    marginTop: theme.spacing(5),
-    marginBottom: theme.spacing(5),
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
   },
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     bodyCard: {

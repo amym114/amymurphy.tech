@@ -74,7 +74,7 @@ function Home() {
           </Box>
           <Icons />
         </Grid>
-        <Grid item md={12}>
+        <Grid item xs={12}>
           <Divider className={mainClasses.divider} />
         </Grid>
       </Grid>
@@ -115,7 +115,7 @@ function Home() {
             </Button>
           </Box>
         </Grid>
-        <Grid item md={12}>
+        <Grid item xs={12}>
           <Divider className={mainClasses.divider} />
         </Grid>
       </Grid>
