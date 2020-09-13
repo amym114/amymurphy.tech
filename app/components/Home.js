@@ -1,4 +1,5 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -9,13 +10,30 @@ import Icons from './Icons';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
+const useStyles = makeStyles((theme) => ({
+  iconHolder: {
+    maxWidth: '450px',
+  },
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    iconHolder: {
+      maxWidth: '350px',
+    },
+  },
+}));
+
 function Home() {
   const mainClasses = siteClasses();
+  const classes = useStyles();
 
   return (
     <>
-      <Grid container>
-        <Grid item md={7}>
+      <Grid
+        container
+        direction='row'
+        justify='space-between'
+        alignItems='center'
+      >
+        <Grid item md>
           <Box className={mainClasses.mb15}>
             <Typography variant='h2'>ABOUT</Typography>
           </Box>
@@ -44,7 +62,7 @@ function Home() {
             </Typography>
           </Box>
         </Grid>
-        <Grid item md={5}>
+        <Grid item className={classes.iconHolder}>
           <Box className={mainClasses.mb15}>
             <Typography variant='h2'>TECH SKILLS</Typography>
           </Box>
