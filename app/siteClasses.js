@@ -9,6 +9,12 @@ const siteClasses = makeStyles((theme) => ({
     color: '#3D4B51',
     textDecoration: 'none',
     fontWeight: '700',
+    '&:hover': {
+      color: theme.palette.secondary.dark,
+    },
+  },
+  bodyItalic: {
+    fontStyle: 'italic',
   },
   pt5: {
     paddingTop: '5px',

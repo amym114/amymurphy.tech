@@ -38,7 +38,9 @@ const useStyles = makeStyles((theme) => ({
     color: '#91AEBA',
   },
   drawerImg: {
-    padding: theme.spacing(3),
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(3),
+    paddingTop: theme.spacing(3),
   },
   menuIconPad: {
     padding: theme.spacing(2),
