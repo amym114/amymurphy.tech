@@ -1,19 +1,40 @@
 import React from 'react';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
 import siteClasses from '../siteClasses';
 import Icons from './Icons';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
+const useStyles = makeStyles((theme) => ({
+  inlineBtn: {
+    display: 'inline',
+    fontSize: '1.2rem',
+    textTransform: 'none',
+    fontWeight: 700,
+    padding: 0,
+    margin: 0,
+  },
+}));
+
 function About() {
   const mainClasses = siteClasses();
+  const classes = useStyles();
 
   return (
     <>
+      <Typography variant='body2' className={mainClasses.bodyItalic} paragraph>
+        TL;DR: Open to freelance work &ndash;{' '}
+        <Link className={mainClasses.bodyLink} to='/contact'>
+          get in touch
+        </Link>{' '}
+        today!
+      </Typography>
       <Typography variant='body2' paragraph>
         When I first started in my career (15 years ago, with all the youthful
         enthusiasm that entails) I often told people that the thing that excited
@@ -70,12 +91,26 @@ function About() {
       </Typography>
 
       <Typography variant='body2' paragraph>
-        {' '}
         Because of where I am professionally – learning and discovering new
         things every day – I’m looking for a few projects to help me sharpen my
         chops and learn the ins and outs of this new tech stack even better. If
         you’re looking for a designer or developer; a website or an app; a
-        collaborator or project director – drop me a line or give me a call.{' '}
+        collaborator or project director –{' '}
+        <Tooltip title='amymurphy114@gmail.com' placement='top'>
+          <Button
+            className={classes.inlineBtn}
+            href='mailto:amymurphy114@gmail.com'
+          >
+            drop me a line
+          </Button>
+        </Tooltip>{' '}
+        or{' '}
+        <Tooltip title='251-454-1107' placement='top'>
+          <Button className={classes.inlineBtn} href='tel:251-454-1107'>
+            give me a call
+          </Button>
+        </Tooltip>{' '}
+        .
       </Typography>
     </>
   );
