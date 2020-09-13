@@ -13,6 +13,7 @@ import Header from './Header';
 import MobileNav from './MobileNav';
 import Home from './Home';
 import About from './About';
+import Resume from './Resume';
 
 const drawerWidth = 240;
 
@@ -77,6 +78,9 @@ export default function Page() {
           </Route>
           <Route path='/about'>
             <About />
+          </Route>
+          <Route path='/resume'>
+            <Resume />
           </Route>
         </Switch>
       </main>
