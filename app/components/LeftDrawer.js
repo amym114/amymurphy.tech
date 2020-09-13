@@ -26,22 +26,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
-  drawer: {
-    backgroundColor: '#3D4B51',
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    backgroundColor: '#3D4B51',
-    color: '#fff',
-    width: drawerWidth,
-  },
-  drawerImg: {
-    padding: theme.spacing(3),
-  },
   navLink: {
     fontFamily: 'Montserrat, Helvetica, Arial, sans',
-    fontSize: '2rem',
+    fontSize: '1.5rem',
     fontWeight: 300,
     color: '#fff',
     textDecoration: 'none',
@@ -49,6 +36,13 @@ const useStyles = makeStyles((theme) => ({
   selected: {
     fontWeight: 700,
     color: '#91AEBA',
+  },
+  drawerImg: {
+    padding: theme.spacing(3),
+  },
+  menuIconPad: {
+    padding: theme.spacing(2),
+    maxWidth: '60px',
   },
 }));
 
@@ -67,14 +61,7 @@ export default function LeftDrawer(props) {
   };
 
   return (
-    <Drawer
-      className={classes.drawer}
-      variant='permanent'
-      classes={{
-        paper: classes.drawerPaper,
-      }}
-      anchor='left'
-    >
+    <>
       {props.closeBtn ? (
         <Grid
           container
@@ -100,6 +87,44 @@ export default function LeftDrawer(props) {
       <Hidden mdUp>
         <Box mt={5}></Box>
       </Hidden>
+      <Grid container direction='row' justify='center' alignItems='center'>
+        <Grid item xs={3}>
+          <a href='https://www.linkedin.com/in/amymurphy114/' target='_blank'>
+            <img
+              src='images/icon-linkedin.png'
+              alt='LinkedIn'
+              className={clsx(classes.menuIconPad, mainClasses.imgFluid)}
+            />
+          </a>
+        </Grid>
+        <Grid item xs={3}>
+          <a href='https://github.com/amym114' target='_blank'>
+            <img
+              src='images/icon-github-logo.png'
+              alt='Github'
+              className={clsx(classes.menuIconPad, mainClasses.imgFluid)}
+            />
+          </a>
+        </Grid>
+        <Grid item xs={3}>
+          <a href='tel:251-454-1107' target='_blank'>
+            <img
+              src='images/icon-phone.png'
+              alt='Phone Call'
+              className={clsx(classes.menuIconPad, mainClasses.imgFluid)}
+            />
+          </a>
+        </Grid>
+        <Grid item xs={3}>
+          <a href='mailto:amymurphy114@gmail.com' target='_blank'>
+            <img
+              src='images/icon-envelope.png'
+              alt='E-mail'
+              className={clsx(classes.menuIconPad, mainClasses.imgFluid)}
+            />
+          </a>
+        </Grid>
+      </Grid>
       <List>
         <NavLink
           to='/'
@@ -112,21 +137,21 @@ export default function LeftDrawer(props) {
           </ListItem>
         </NavLink>
         <NavLink
-          to='/resume'
-          className={classes.navLink}
-          activeClassName={classes.selected}
-        >
-          <ListItem button>
-            <ListItemText disableTypography primary='RESUME' />
-          </ListItem>
-        </NavLink>
-        <NavLink
           to='/about'
           className={classes.navLink}
           activeClassName={classes.selected}
         >
           <ListItem button>
             <ListItemText disableTypography primary='ABOUT' />
+          </ListItem>
+        </NavLink>
+        <NavLink
+          to='/resume'
+          className={classes.navLink}
+          activeClassName={classes.selected}
+        >
+          <ListItem button>
+            <ListItemText disableTypography primary='RESUME' />
           </ListItem>
         </NavLink>
         <NavLink
@@ -148,6 +173,6 @@ export default function LeftDrawer(props) {
           </ListItem>
         </NavLink>
       </List>
-    </Drawer>
+    </>
   );
 }

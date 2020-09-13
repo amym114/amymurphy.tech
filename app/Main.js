@@ -14,7 +14,7 @@ import StateContext from './StateContext';
 import DispatchContext from './DispatchContext';
 import { useImmerReducer } from 'use-immer';
 
-const theme = createMuiTheme({
+let theme = createMuiTheme({
   palette: {
     primary: {
       main: '#3D4B51',
@@ -31,8 +31,11 @@ const theme = createMuiTheme({
       fontSize: '3rem',
       fontWeight: 800,
     },
+    body1: {
+      fontSize: '1.25rem',
+    },
     body2: {
-      fontSize: '1.1rem',
+      fontSize: '1.15rem',
     },
     h2: {
       fontFamily: 'Montserrat, Helvetica, Arial, sans',
@@ -51,11 +54,16 @@ const theme = createMuiTheme({
     },
     h5: {
       fontFamily: 'Montserrat, Helvetica, Arial, sans',
-      fontSize: '1.5rem',
+      fontSize: '1.3rem',
       fontWeight: 300,
+    },
+    h6: {
+      fontSize: '1.5rem',
     },
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 const App = () => {
   const initialState = {

@@ -5,7 +5,9 @@ import { Switch, Route } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 import Hidden from '@material-ui/core/Hidden';
+import Drawer from '@material-ui/core/Drawer';
 import LeftDrawer from './LeftDrawer';
 import Header from './Header';
 import MobileNav from './MobileNav';
@@ -25,6 +27,17 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(5),
     width: '100%',
   },
+  drawer: {
+    backgroundColor: '#3D4B51',
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    backgroundColor: '#3D4B51',
+    color: '#fff',
+    width: drawerWidth,
+  },
+
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     content: {
       paddingLeft: theme.spacing(4),
@@ -42,7 +55,16 @@ export default function Page() {
     <div className={classes.root}>
       <CssBaseline />
       <Hidden smDown>
-        <LeftDrawer />
+        <Drawer
+          className={classes.drawer}
+          variant='permanent'
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+          anchor='left'
+        >
+          <LeftDrawer />
+        </Drawer>
       </Hidden>
       <Hidden mdUp>
         <MobileNav />

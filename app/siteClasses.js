@@ -50,8 +50,8 @@ const siteClasses = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   divider: {
-    marginTop: theme.spacing(5),
-    marginBottom: theme.spacing(5),
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
   },
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     bodyCard: {
@@ -61,6 +61,9 @@ const siteClasses = makeStyles((theme) => ({
   menuBtn: {
     transform: 'translate(0px, 25px) rotate(-90deg)',
     color: '#FFF',
+    position: '-webkit-sticky',
+    position: 'sticky',
+    top: '0',
   },
   menuBtnHolder: {
     backgroundColor: '#3D4B51',

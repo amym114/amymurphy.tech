@@ -14,9 +14,15 @@ const useStyles = makeStyles((theme) => ({
   iconHolder: {
     maxWidth: '450px',
   },
+  padAboutRight: {
+    paddingRight: theme.spacing(1),
+  },
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     iconHolder: {
       maxWidth: '350px',
+    },
+    padAboutRight: {
+      paddingRight: theme.spacing(7),
     },
   },
 }));
@@ -37,7 +43,7 @@ function Home() {
           <Box className={mainClasses.mb15}>
             <Typography variant='h2'>ABOUT</Typography>
           </Box>
-          <Box pr={7}>
+          <Box className={classes.padAboutRight}>
             <Typography variant='body2' paragraph>
               I am a motivated professional with over 15 years of experience,
               ready to take your project to the next level. A collaborative
@@ -68,7 +74,7 @@ function Home() {
           </Box>
           <Icons />
         </Grid>
-        <Grid item md={12}>
+        <Grid item xs={12}>
           <Divider className={mainClasses.divider} />
         </Grid>
       </Grid>
@@ -89,7 +95,7 @@ function Home() {
           </Box>
           <Box mb={3}>
             <Typography variant='h4'>FREELANCE WEB DEVELOPER</Typography>
-            October 2005 &ndash; Present | Mobile, AL/New Orleans, LA
+            October 2004 &ndash; Present | Mobile, AL/New Orleans, LA
           </Box>
           <Box mb={3}>
             <Typography variant='h4'>MOTION GRAPHICS DESIGNER</Typography>
@@ -109,7 +115,7 @@ function Home() {
             </Button>
           </Box>
         </Grid>
-        <Grid item md={12}>
+        <Grid item xs={12}>
           <Divider className={mainClasses.divider} />
         </Grid>
       </Grid>
