@@ -58,5 +58,12 @@ const siteClasses = makeStyles((theme) => ({
       paddingTop: theme.spacing(3),
     },
   },
+  menuBtn: {
+    transform: 'translate(0px, 25px) rotate(-90deg)',
+    color: '#FFF',
+  },
+  menuBtnHolder: {
+    backgroundColor: '#3D4B51',
+  },
 }));
 export default siteClasses;

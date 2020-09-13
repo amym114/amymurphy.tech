@@ -7,8 +7,12 @@ import {
   responsiveFontSizes,
 } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Page from './components/Page';
 import Typography from '@material-ui/core/Typography';
+
+import Page from './components/Page';
+import StateContext from './StateContext';
+import DispatchContext from './DispatchContext';
+import { useImmerReducer } from 'use-immer';
 
 const theme = createMuiTheme({
   palette: {
@@ -47,21 +51,41 @@ const theme = createMuiTheme({
     },
     h5: {
       fontFamily: 'Montserrat, Helvetica, Arial, sans',
-      fontSize: '1.3rem',
+      fontSize: '1.5rem',
       fontWeight: 300,
     },
   },
 });
 
-// theme = responsiveFontSizes(theme);
-
 const App = () => {
+  const initialState = {
+    mobileIsOpen: false,
+  };
+
+  const appReducer = React.useCallback((draft, action) => {
+    switch (action.type) {
+      //STEP 2 - Select a Power Unit/Deck
+      case 'setMobileIsOpen':
+        console.log('setting mobile open');
+        draft.mobileIsOpen = action.value;
+        break;
+    }
+  });
+
+  const [state, dispatch] = useImmerReducer(appReducer, initialState);
+
+  // theme = responsiveFontSizes(theme);
+
   return (
-    <HashRouter>
-      <ThemeProvider theme={theme}>
-        <Page />
-      </ThemeProvider>
-    </HashRouter>
+    <StateContext.Provider value={state}>
+      <DispatchContext.Provider value={dispatch}>
+        <HashRouter>
+          <ThemeProvider theme={theme}>
+            <Page />
+          </ThemeProvider>
+        </HashRouter>
+      </DispatchContext.Provider>
+    </StateContext.Provider>
   );
 };
 
