@@ -31,6 +31,9 @@ let theme = createMuiTheme({
       fontSize: '3rem',
       fontWeight: 800,
     },
+    body1: {
+      fontSize: '1.25rem',
+    },
     body2: {
       fontSize: '1.15rem',
     },
@@ -53,6 +56,9 @@ let theme = createMuiTheme({
       fontFamily: 'Montserrat, Helvetica, Arial, sans',
       fontSize: '1.3rem',
       fontWeight: 300,
+    },
+    h6: {
+      fontSize: '1.5rem',
     },
   },
 });

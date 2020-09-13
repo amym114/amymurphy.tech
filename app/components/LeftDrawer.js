@@ -137,21 +137,21 @@ export default function LeftDrawer(props) {
           </ListItem>
         </NavLink>
         <NavLink
-          to='/resume'
-          className={classes.navLink}
-          activeClassName={classes.selected}
-        >
-          <ListItem button>
-            <ListItemText disableTypography primary='RESUME' />
-          </ListItem>
-        </NavLink>
-        <NavLink
           to='/about'
           className={classes.navLink}
           activeClassName={classes.selected}
         >
           <ListItem button>
             <ListItemText disableTypography primary='ABOUT' />
+          </ListItem>
+        </NavLink>
+        <NavLink
+          to='/resume'
+          className={classes.navLink}
+          activeClassName={classes.selected}
+        >
+          <ListItem button>
+            <ListItemText disableTypography primary='RESUME' />
           </ListItem>
         </NavLink>
         <NavLink
