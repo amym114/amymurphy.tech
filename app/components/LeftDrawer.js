@@ -26,19 +26,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
-  drawer: {
-    backgroundColor: '#3D4B51',
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    backgroundColor: '#3D4B51',
-    color: '#fff',
-    width: drawerWidth,
-  },
-  drawerImg: {
-    padding: theme.spacing(3),
-  },
   navLink: {
     fontFamily: 'Montserrat, Helvetica, Arial, sans',
     fontSize: '2rem',
@@ -49,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
   selected: {
     fontWeight: 700,
     color: '#91AEBA',
+  },
+  drawerImg: {
+    padding: theme.spacing(3),
   },
 }));
 
@@ -67,14 +57,7 @@ export default function LeftDrawer(props) {
   };
 
   return (
-    <Drawer
-      className={classes.drawer}
-      variant='permanent'
-      classes={{
-        paper: classes.drawerPaper,
-      }}
-      anchor='left'
-    >
+    <>
       {props.closeBtn ? (
         <Grid
           container
@@ -148,6 +131,6 @@ export default function LeftDrawer(props) {
           </ListItem>
         </NavLink>
       </List>
-    </Drawer>
+    </>
   );
 }
