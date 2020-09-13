@@ -19,8 +19,16 @@ let theme = createMuiTheme({
     primary: {
       main: '#3D4B51',
     },
+    secondary: {
+      light: '#c2e0ec',
+      main: '#91AEBA',
+      dark: '#637f8a',
+    },
     text: {
       primary: '#3D4B51',
+    },
+    background: {
+      default: '#fff',
     },
   },
   typography: {
