@@ -14,9 +14,15 @@ const useStyles = makeStyles((theme) => ({
   iconHolder: {
     maxWidth: '450px',
   },
+  padAboutRight: {
+    paddingRight: theme.spacing(1),
+  },
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     iconHolder: {
       maxWidth: '350px',
+    },
+    padAboutRight: {
+      paddingRight: theme.spacing(7),
     },
   },
 }));
@@ -37,7 +43,7 @@ function Home() {
           <Box className={mainClasses.mb15}>
             <Typography variant='h2'>ABOUT</Typography>
           </Box>
-          <Box pr={7}>
+          <Box className={classes.padAboutRight}>
             <Typography variant='body2' paragraph>
               I am a motivated professional with over 15 years of experience,
               ready to take your project to the next level. A collaborative

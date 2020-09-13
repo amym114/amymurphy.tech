@@ -61,6 +61,9 @@ const siteClasses = makeStyles((theme) => ({
   menuBtn: {
     transform: 'translate(0px, 25px) rotate(-90deg)',
     color: '#FFF',
+    position: '-webkit-sticky',
+    position: 'sticky',
+    top: '0',
   },
   menuBtnHolder: {
     backgroundColor: '#3D4B51',

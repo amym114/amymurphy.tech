@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
     flexShrink: 0,
     height: '100vh',
+    zIndex: '999',
   },
 }));
 
@@ -40,13 +41,11 @@ function MobileNav() {
       <Box className={mainClasses.menuBtnHolder} onClick={triggerDrawer}>
         <div className={mainClasses.menuBtn}>MENU</div>
       </Box>
-      <Collapse in={appState.mobileIsOpen} timeout='auto' unmountOnExit>
-        <Modal
-          open={appState.mobileIsOpen}
-          className={classes.drawer}
-          hideBackdrop
-        >
-          <LeftDrawer closeBtn style={{ zIndex: '999' }} />
+      <Collapse in={appState.mobileIsOpen} timeout='auto'>
+        <Modal open={appState.mobileIsOpen}>
+          <Box className={classes.drawer}>
+            <LeftDrawer closeBtn />
+          </Box>
         </Modal>
       </Collapse>
     </>
