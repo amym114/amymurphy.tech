@@ -95,7 +95,7 @@ function Home() {
           </Box>
           <Box mb={3}>
             <Typography variant='h4'>FREELANCE WEB DEVELOPER</Typography>
-            October 2005 &ndash; Present | Mobile, AL/New Orleans, LA
+            October 2004 &ndash; Present | Mobile, AL/New Orleans, LA
           </Box>
           <Box mb={3}>
             <Typography variant='h4'>MOTION GRAPHICS DESIGNER</Typography>
