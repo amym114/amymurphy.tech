@@ -108,11 +108,13 @@ function Home() {
             October 2004 &ndash; March 2005 | Orlando, FL
           </Box>
           <Box>
-            <Button variant='outlined' color='primary' size='small'>
-              <Box p={1}>
-                <Typography variant='h5'>SEE FULL RESUME</Typography>
-              </Box>
-            </Button>
+            <Link to='/resume'>
+              <Button variant='outlined' color='primary' size='small'>
+                <Box p={1}>
+                  <Typography variant='h5'>SEE FULL RESUME</Typography>
+                </Box>
+              </Button>
+            </Link>
           </Box>
         </Grid>
         <Grid item xs={12}>

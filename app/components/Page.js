@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     maxWidth: '1920px',
+    minHeight: '110vh',
   },
   content: {
     paddingLeft: theme.spacing(4),

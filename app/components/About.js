@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline',
     fontSize: '1.2rem',
     textTransform: 'none',
+    color: '#637f8a',
     fontWeight: 700,
     padding: 0,
     margin: 0,
@@ -73,9 +74,11 @@ function About() {
             </Typography>
           </Box>
           <Box mt={1} mb={3}>
-            <Button variant='outlined'>
-              <Typography variant='body1'>RESUME </Typography>
-            </Button>
+            <Link to='/resume'>
+              <Button variant='outlined'>
+                <Typography variant='body1'>RESUME </Typography>
+              </Button>
+            </Link>
           </Box>
         </div>
         I recently made the leap from being a LAMP stack developer to a MERN

@@ -6,7 +6,8 @@ const siteClasses = makeStyles((theme) => ({
     height: 'auto',
   },
   bodyLink: {
-    color: '#3D4B51',
+    color: theme.palette.secondary.dark,
+    fontSize: '1.1em',
     textDecoration: 'none',
     fontWeight: '700',
     '&:hover': {
