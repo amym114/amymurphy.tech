@@ -9,17 +9,17 @@ const ExperienceData = () => {
         dates: 'March 2006 – Present',
         location: 'Mobile, AL/New Orleans, LA',
         brief:
-          'My primary job at Dogwood Productions is as a Full Stack Developer for Grasshopper Mowers, a commercial lawnmowing company. I have been responsible for the end-to-end development and design of their internal dealer/employee app for the past eight years.',
+          'My primary job at Dogwood Productions is as a Full Stack Developer for Grasshopper Mowers, a commercial lawnmowing company. I have been responsible for the end-to-end development and design of their internal dealer/employee app for the past eight years. Over the course of the past year, I have worked to migrate this project from a more imperatively programmed Javascript, jQuery, AJAX, PHP, and MySQL app, to a functionally programmed MERN stack app.',
       },
       featuresTitle: 'APP FEATURES',
       features: [
         <>
-          Intuitive <b>quoting system</b> creates quick, accurate quotes which
-          dealers can provide to customers.
+          Intuitive <b>quote system</b> creates quick, accurate quotes which
+          dealers can provide to customers
         </>,
         <>
           Dozens of <b>pricing paths</b> allow dealers to quote or bid based on
-          the most relevant prices and costing
+          the most pertinent prices and costing
         </>,
         <>
           System prompts dealers to <b>add required parts</b> and{' '}
@@ -37,18 +37,10 @@ const ExperienceData = () => {
           announcements
         </>,
         <>
-          Easy <b>online ordering system</b> allows dealers to convert quotes
-          directly to orders, to order from a list, or to create stocking orders{' '}
-        </>,
-        <>
-          Hangtag generation tool makes it possible for dealers to create and
-          use <b>promotional PDFs</b> for use in-store
-        </>,
-        <>
-          <b>Warranty registration</b> and <b>claim filing</b> allows dealers to
-          continue conveniently using the same system and data through the end
-          of the customer’s journey, from the initial quote to placing the order
-          to registering the machine
+          System allows dealers to use quotes as a <b>starting point</b> for
+          generating orders, creating hangtags, registering warranties, and
+          filing claims, convieniently following the customer’s journey from the
+          time they first spot their machine through registration
         </>,
         <>
           Custom <b>content management system</b> for easy management of parts,
@@ -58,24 +50,27 @@ const ExperienceData = () => {
       ],
       responsibilities: [
         <>
-          <b>Project management and planning</b> using Github issues, labels,
-          and milestones, which later correspond to relevant branches
+          Planned and <b>managed project</b> using Github
         </>,
         <>
-          Constant and <b>clear communication</b> with project owner to ensure
-          the project moves steadily and we stay on the same page{' '}
+          <b>Communicated constantly and clearly</b> with project owner to
+          ensure the project moved steadily and everyone involved stayed on the
+          same page
         </>,
         <>
-          Designing an <b>intuitive user interface</b> which handles larges
-          amounts of data gracefully and feels simple to use{' '}
+          Designed <b>intuitive user interfaces</b> which handle large amounts
+          of data gracefully while maintaining simplicity
         </>,
         <>
-          Producing <b>normalized MySQL database design</b> (3NF), with
+          Produced <b>normalized MySQL database design</b> (3NF), with
           appropriate indexes and relationships{' '}
         </>,
         <>
-          Building out front-end with modern <b>ReactJS</b> framework, utilizing
-          hooks and context for quick data manipulation
+          Built front-end with modern <b>ReactJS</b> framework, utilizing hooks
+          and context for quick data manipulation
+        </>,
+        <>
+          Constructed <b>RESTful API</b> allowing for easy access to custom data
         </>,
       ],
       impacts: [
@@ -87,8 +82,8 @@ const ExperienceData = () => {
           Greatly elevated accuracy of quotes, enhancing customer satisfaction
         </>,
         <>
-          Completely transofrmed how quotes, orders, and warranties are created
-          and handled interally
+          Transformed how quotes, orders, and warranties are created and handled
+          interally, taking it from a paper system to completely digital
         </>,
       ],
       techStack: {
@@ -155,7 +150,8 @@ const ExperienceData = () => {
           <>
             Performed Flash based development of international real estate
             websites with multi-language support for luxury homes in Europe and
-            the US Virgin Islands.
+            the US Virgin Islands. Specialized in merging motion graphics with
+            web technology.
           </>
         ),
       },

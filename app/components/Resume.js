@@ -6,12 +6,13 @@ import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
+import DividerGrid from './DividerGrid';
 import Button from '@material-ui/core/Button';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandIcon from './ExpandIcon';
 import siteClasses from '../siteClasses';
 import Icons from './Icons';
+import Tools from './Tools';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import ExperienceData from '../data/ExperienceData';
@@ -20,15 +21,34 @@ const useStyles = makeStyles((theme) => ({
   iconHolder: {
     maxWidth: '450px',
   },
+  toolHolder: {
+    maxWidth: '400px',
+  },
   padAboutRight: {
     paddingRight: theme.spacing(1),
+  },
+  resumeBtn: {
+    clear: 'both',
+    display: 'block',
+    float: 'none',
+    marginLeft: 0,
+    marginBottom: theme.spacing(2),
+    textAlign: 'center',
   },
   [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
     iconHolder: {
       maxWidth: '350px',
     },
+    toolHolder: {
+      maxWidth: '300px',
+    },
     padAboutRight: {
       paddingRight: theme.spacing(7),
+    },
+    resumeBtn: {
+      float: 'right',
+      marginLeft: '1rem',
+      marginBottom: '1rem',
     },
   },
 }));
@@ -72,12 +92,12 @@ const AccordionSummary = withStyles((theme) => ({
 const AccordionDetails = withStyles((theme) => ({
   root: {
     paddingLeft: 0,
-    paddingBottom: theme.spacing(2),
+    paddingBottom: theme.spacing(5),
     borderBottom: '1px solid rgba(0, 0, 0, .125)',
   },
 }))(MuiAccordionDetails);
 
-function About() {
+function Resume() {
   const classes = useStyles();
 
   const [expanded, setExpanded] = React.useState('panel1');
@@ -98,7 +118,7 @@ function About() {
       }
       return 12;
     }
-    return 0;
+    return false;
   };
 
   const getRightCols = (experience) => {
@@ -109,20 +129,48 @@ function About() {
     ) {
       return 6;
     }
-    return 0;
+    return false;
   };
 
   return (
     <>
+      <Box>
+        <Typography variant='h2'>OVERVIEW </Typography>
+
+        <Box mt={2} mb={3}>
+          <Typography variant='body2' paragraph>
+            <Button
+              href='http://www.amymurphy.tech/pdfs/Amy%20Murphy%20-%20Full%20Stack%20Web%20Developer.pdf?fbclid=IwAR27eXQDzkOhfYb0DvkKqZZO_rcM-X6bSoN1Npb2tYOH8fiZuuocl1VbzCE'
+              variant='outlined'
+              size='small'
+              className={classes.resumeBtn}
+            >
+              Download PDF
+            </Button>
+            I am an accomplished professional with a genuine passion for and
+            dedication to this industry. As an avid learner, I am continuously
+            developing my skillset: I have a robust background in PHP, MySQL,
+            JavaScript, and HTML/CSS with additional extensive experience in
+            ReactJS, Node.js, Express, MongoDB, and more.{' '}
+          </Typography>
+
+          <Typography variant='body2'>
+            In the workplace, I am a collaborative leader with strong project
+            management and communication skills. Whether an issue calls for
+            creative problem solving, critical thinking, or adaptability, you
+            can rely on my expertise to get the job done.{' '}
+          </Typography>
+        </Box>
+      </Box>
       <Typography variant='h2'>EXPERIENCE</Typography>
       {ExperienceData().map((experience, index) => {
         return (
-          <>
+          <div key={index}>
             <Accordion
               square
               expanded={expanded === index}
               onChange={handleChange(index)}
-              key={index}
+              key={'e' + index}
             >
               <AccordionSummary expandIcon={<ExpandIcon />}>
                 <Typography className={mainClasses.bodyItalic}>
@@ -154,7 +202,7 @@ function About() {
                   alignItems='flex-start'
                 >
                   <Grid item xs={12} md={12}>
-                    <Typography variant='body2' paragraph>
+                    <Typography variant='body2' gutterBottom paragraph>
                       {experience.job.brief}
                     </Typography>
                   </Grid>
@@ -176,8 +224,8 @@ function About() {
                         <Grid item>
                           <ul style={{ marginTop: 0, marginRight: '50px' }}>
                             {experience.features
-                              ? experience.features.map((feature) => {
-                                  return <li>{feature}</li>;
+                              ? experience.features.map((feature, index) => {
+                                  return <li key={'f' + index}>{feature}</li>;
                                 })
                               : ''}
                           </ul>
@@ -198,8 +246,10 @@ function About() {
                         <Grid item>
                           <ul style={{ marginTop: 0, marginRight: '50px' }}>
                             {experience.responsibilities.map(
-                              (responsibility) => {
-                                return <li>{responsibility}</li>;
+                              (responsibility, index) => {
+                                return (
+                                  <li key={'r' + index}>{responsibility}</li>
+                                );
                               }
                             )}
                           </ul>
@@ -216,8 +266,8 @@ function About() {
                         </Grid>
                         <Grid item>
                           <ul style={{ marginTop: 0, marginRight: '50px' }}>
-                            {experience.impacts.map((impact) => {
-                              return <li>{impact}</li>;
+                            {experience.impacts.map((impact, index) => {
+                              return <li key={'i' + index}>{impact}</li>;
                             })}
                           </ul>
                         </Grid>
@@ -280,7 +330,7 @@ function About() {
                 </Grid>
               </AccordionDetails>
             </Accordion>
-          </>
+          </div>
         );
       })}
       <Grid
@@ -290,9 +340,11 @@ function About() {
         alignItems='flex-start'
       >
         <Grid item>
-          <Typography variant='h2' gutterBottom>
-            TECHNICAL SKILLS
-          </Typography>
+          <Box mt={2} mb={2}>
+            <Typography variant='h2' gutterBottom>
+              TECHNICAL SKILLS
+            </Typography>
+          </Box>
         </Grid>
       </Grid>
       <Grid
@@ -302,28 +354,86 @@ function About() {
         alignItems='flex-start'
       >
         <Grid item md>
-          <Typography variant='body2'>
-            {' '}
-            These days, I spend most of my time in Javascript – I’m running Node
-            12 on my server and working in React 16 on my front-end. But hey,
-            you like Wordpress? I can do Wordpress. You like PHP? I can do PHP.
-            Whatever makes you happy, future client.
-          </Typography>{' '}
-          <Icons />
+          <Grid container>
+            <Grid item className={classes.iconHolder}>
+              <Icons />
+            </Grid>
+            <Grid item md>
+              <Box ml={2} mr={6}>
+                <Typography variant='body1'>
+                  These days, I spend most of my time in Javascript – I’m
+                  running Node 12 on my server and working in React 16 on my
+                  front-end. But hey, you like Wordpress? I can do Wordpress.
+                  You like PHP? I can do PHP. Whatever makes you happy, future
+                  client.
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
-      <Grid container>
+      <DividerGrid />
+
+      <Grid
+        container
+        direction='row'
+        justify='flex-start'
+        alignItems='flex-start'
+      >
         <Grid item>
-          <Divider />
+          <Typography variant='h2' gutterBottom>
+            FAVORITE TOOLS
+          </Typography>
         </Grid>
       </Grid>
-      <Grid container>
+
+      <Grid
+        container
+        direction='row'
+        justify='flex-start'
+        alignItems='flex-start'
+      >
+        <Grid item md>
+          <Grid container>
+            <Grid item md>
+              <Typography variant='body1' paragraph>
+                What's a developer without her toolbox? This is just a handful
+                of my most favorite apps, but is a good representation of what I
+                have open at any given time.
+              </Typography>{' '}
+              <Typography variant='body1' paragraph>
+                Honorable mention also goes to BBEdit, which used to be my
+                default editor but is now a super helpful scratchpad, and also
+                to Terminal, which basically runs my whole life.
+              </Typography>
+            </Grid>
+            <Grid item className={classes.toolHolder}>
+              <Box ml={2}>
+                <Tools />
+              </Box>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+      <DividerGrid />
+      <Grid
+        container
+        direction='row'
+        justify='flex-start'
+        alignItems='flex-start'
+      >
         <Grid item>
-          <Typography variant='h2'></Typography>
+          <Typography variant='h2' gutterBottom>
+            EDUCATION
+          </Typography>
+          <Typography variant='h4'>FULL SAIL UNIVERSITY</Typography>
+          <Typography variant='body1'>
+            Associate Degree in Digital Media & Communication
+          </Typography>
         </Grid>
       </Grid>
     </>
   );
 }
 
-export default About;
+export default Resume;

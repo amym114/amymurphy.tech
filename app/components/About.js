@@ -3,7 +3,6 @@ import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import siteClasses from '../siteClasses';
@@ -20,6 +19,26 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 700,
     padding: 0,
     margin: 0,
+  },
+
+  wonderingDiv: {
+    float: 'right',
+    width: '50%',
+    borderLeft: '1px solid #CCC',
+    paddingLeft: '25px',
+    marginLeft: '25px',
+  },
+  [`@media (min-width: ${theme.breakpoints.values.md}px)`]: {
+    bodyCard: {
+      paddingTop: theme.spacing(3),
+    },
+    wonderingDiv: {
+      float: 'right',
+      width: '30%',
+      borderLeft: '1px solid #CCC',
+      paddingLeft: '25px',
+      marginLeft: '25px',
+    },
   },
 }));
 
@@ -57,16 +76,8 @@ function About() {
         has greatly evolved and strengthened over the years.{' '}
       </Typography>
 
-      <Typography variant='body2' paragraph>
-        <div
-          style={{
-            float: 'right',
-            width: '30%',
-            borderLeft: '1px solid #CCC',
-            paddingLeft: '25px',
-            marginLeft: '25px',
-          }}
-        >
+      <Typography variant='body2' component={'div'} paragraph>
+        <div className={classes.wonderingDiv}>
           <Typography variant='h6'>IN CASE YOU WERE WONDERING...</Typography>
           <Box mt={3}>
             <Typography variant='body1'>
@@ -74,10 +85,14 @@ function About() {
             </Typography>
           </Box>
           <Box mt={1} mb={3}>
-            <Link to='/resume'>
-              <Button variant='outlined'>
-                <Typography variant='body1'>RESUME </Typography>
-              </Button>
+            <Link
+              to='/resume'
+              color='primary'
+              component={Button}
+              variant='outlined'
+              size='small'
+            >
+              <Typography variant='body1'>RESUME </Typography>
             </Link>
           </Box>
         </div>
@@ -100,12 +115,7 @@ function About() {
         you’re looking for a designer or developer; a website or an app; a
         collaborator or project director –{' '}
         <Tooltip title='amymurphy114@gmail.com' placement='top'>
-          <Button
-            className={classes.inlineBtn}
-            href='mailto:amymurphy114@gmail.com'
-          >
-            drop me a line
-          </Button>
+          <Button className={classes.inlineBtn}>drop me a line</Button>
         </Tooltip>{' '}
         or{' '}
         <Tooltip title='251-454-1107' placement='top'>

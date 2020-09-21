@@ -57,7 +57,7 @@ let theme = createMuiTheme({
     },
     h4: {
       fontFamily: 'Alegreya, Times, Georgia, serif',
-      fontSize: 20,
+      fontSize: '1.55rem',
       fontWeight: 700,
     },
     h5: {
@@ -82,7 +82,6 @@ const App = () => {
     switch (action.type) {
       //STEP 2 - Select a Power Unit/Deck
       case 'setMobileIsOpen':
-        console.log('setting mobile open');
         draft.mobileIsOpen = action.value;
         break;
     }

@@ -7,7 +7,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import CloseIcon from '@material-ui/icons/Close';
@@ -81,10 +80,12 @@ export default function LeftDrawer(props) {
         ''
       )}
       <Hidden smDown>
-        <img
-          src='images/amymurphy.png'
-          className={clsx(classes.drawerImg, mainClasses.imgFluid)}
-        />
+        <Box className={classes.drawerImg}>
+          <img
+            src='images/amymurphy.png'
+            className={clsx(mainClasses.imgFluid)}
+          />
+        </Box>
       </Hidden>
       <Hidden mdUp>
         <Box mt={5}></Box>
@@ -133,6 +134,7 @@ export default function LeftDrawer(props) {
           className={classes.navLink}
           activeClassName={classes.selected}
           exact
+          onClick={triggerDrawer}
         >
           <ListItem button>
             <ListItemText disableTypography primary='HOME' />
@@ -142,6 +144,7 @@ export default function LeftDrawer(props) {
           to='/about'
           className={classes.navLink}
           activeClassName={classes.selected}
+          onClick={triggerDrawer}
         >
           <ListItem button>
             <ListItemText disableTypography primary='ABOUT' />
@@ -151,6 +154,7 @@ export default function LeftDrawer(props) {
           to='/resume'
           className={classes.navLink}
           activeClassName={classes.selected}
+          onClick={triggerDrawer}
         >
           <ListItem button>
             <ListItemText disableTypography primary='RESUME' />
@@ -160,6 +164,7 @@ export default function LeftDrawer(props) {
           to='/articles'
           className={classes.navLink}
           activeClassName={classes.selected}
+          onClick={triggerDrawer}
         >
           <ListItem button>
             <ListItemText disableTypography primary='ARTICLES' />
@@ -169,6 +174,7 @@ export default function LeftDrawer(props) {
           to='/contact'
           className={classes.navLink}
           activeClassName={classes.selected}
+          onClick={triggerDrawer}
         >
           <ListItem button>
             <ListItemText disableTypography primary='CONTACT' />
